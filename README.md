@@ -16,7 +16,7 @@ Shared Runbooks allows you to:
     * [OPTIONAL] Send a patching report email
 * Support Azure Arc Server
   * Pre-scripts and post scripts are not supported for Azure Arc Servers
-    * You can schedule Azure Arc Servers restarts using `POLICY_RESTART` tag with Runbooks available in [this repo](https://github.com/mastechdom/Azure-vm-update-management)
+    * You can schedule Azure Arc Servers restarts using `POLICY_RESTART` tag with Runbooks available in [this repo](https://github.com/madgicaltechdom/azure-vm-update-management-with-tags)
 
 
 ## Runbooks description
