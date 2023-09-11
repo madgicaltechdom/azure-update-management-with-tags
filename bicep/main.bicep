@@ -12,8 +12,8 @@
 // az deployment group create --resource-group MyRg --template-file main.bicep
 
 // Location
-param Location string = 'West Europe'
-param LocationShort string = 'weu'
+param Location string = 'Central India'
+param LocationShort string = 'inc'
 
 // Vnet
 param VNetName string = '${LocationShort}-spoke-vnet'
