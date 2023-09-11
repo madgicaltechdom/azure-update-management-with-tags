@@ -291,7 +291,7 @@ module Win01 'ModuleVM.bicep' = if (VmWindows_2019DC) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;*java*;'
+    tags_policy_update: 'Monday;10:43 PM;Always;*java*;'
   }
   dependsOn:[
     Lag
@@ -315,7 +315,7 @@ module Win02 'ModuleVM.bicep' = if (VmWindows_2016) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;;TeamA@abc.com'
+    tags_policy_update: 'Monday;10:41 PM;Always;;TeamA@abc.com'
   }
   dependsOn:[
     Lag
@@ -339,7 +339,7 @@ module Win03 'ModuleVM.bicep' = if (VmWindows_2012R2) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;*java*;'
+    tags_policy_update: 'Monday;10:40 PM;Always;*java*;'
   }
   dependsOn:[
     Lag
@@ -363,7 +363,7 @@ module Lnx01 'ModuleVM.bicep' = if (VmUbuntu_20_04) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;;'
+    tags_policy_update: 'Monday;10:37 PM;Always;;'
   }
   dependsOn:[
     Lag
@@ -387,7 +387,7 @@ module Lnx02 'ModuleVM.bicep' = if (VmUbuntu_18_04) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;*java*,*oracle*;TeamB@abc.com'
+    tags_policy_update: 'Monday;10:36 PM;Always;*java*,*oracle*;TeamB@abc.com'
   }
   dependsOn:[
     Lag
@@ -411,7 +411,7 @@ module Lnx03 'ModuleVM.bicep' = if (VmCentOS_7_4) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;07:15 PM;Always;*java*,*oracle*;TeamB@abc.com'
+    tags_policy_update: 'Monday;10:35 PM;Always;*java*,*oracle*;TeamB@abc.com'
   }
   dependsOn:[
     Lag
