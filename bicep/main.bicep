@@ -13,7 +13,7 @@
 
 // Location
 param Location string = 'Central India'
-param LocationShort string = 'inc'
+param LocationShort string = 'cid'
 
 // Vnet
 param VNetName string = '${LocationShort}-spoke-vnet'
@@ -114,7 +114,7 @@ resource Runbook_ScheduleUpdatesWithVmsTags 'Microsoft.Automation/automationAcco
     logVerbose: false
     logActivityTrace: 0
     publishContentLink: {
-      uri: 'https://raw.githubusercontent.com/dawlysd/azure-update-management-with-tags/main/runbooks/UM-ScheduleUpdatesWithVmsTags.ps1'      
+      uri: 'https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/runbooks/UM-ScheduleUpdatesWithVmsTags.ps1'      
     }
   }
 }
@@ -128,7 +128,7 @@ resource Runbook_PreTasks 'Microsoft.Automation/automationAccounts/runbooks@2019
     logVerbose: false
     logActivityTrace: 0
     publishContentLink: {
-      uri: 'https://raw.githubusercontent.com/dawlysd/azure-update-management-with-tags/main/runbooks/UM-PreTasks.ps1'
+      uri: 'https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/runbooks/UM-PreTasks.ps1'
     }
   }
 }
@@ -142,7 +142,7 @@ resource Runbook_PostTasks 'Microsoft.Automation/automationAccounts/runbooks@201
     logVerbose: false
     logActivityTrace: 0
     publishContentLink: {
-      uri: 'https://raw.githubusercontent.com/dawlysd/azure-update-management-with-tags/main/runbooks/UM-PostTasks.ps1'      
+      uri: 'https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/runbooks/UM-PostTasks.ps1'      
     }
   }
 }
@@ -156,7 +156,7 @@ resource Runbook_CleanUpSchedules 'Microsoft.Automation/automationAccounts/runbo
     logVerbose: false
     logActivityTrace: 0
     publishContentLink: {
-      uri: 'https://raw.githubusercontent.com/dawlysd/azure-update-management-with-tags/main/runbooks/UM-CleanUp-Schedules.ps1'        
+      uri: 'https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/runbooks/UM-CleanUp-Schedules.ps1'        
     }
   }
 }
@@ -170,7 +170,7 @@ resource Runbook_CleanUpSnapshots 'Microsoft.Automation/automationAccounts/runbo
     logVerbose: false
     logActivityTrace: 0
     publishContentLink: {
-      uri: 'https://raw.githubusercontent.com/dawlysd/azure-update-management-with-tags/main/runbooks/UM-CleanUp-Snapshots.ps1'           
+      uri: 'https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/runbooks/UM-CleanUp-Snapshots.ps1'           
     }
   }
 }
@@ -291,7 +291,7 @@ module Win01 'ModuleVM.bicep' = if (VmWindows_2019DC) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:43 PM;Always;*java*;'
+    tags_policy_update: 'Monday;11:15 PM;Always;*java*;'
   }
   dependsOn:[
     Lag
@@ -315,7 +315,7 @@ module Win02 'ModuleVM.bicep' = if (VmWindows_2016) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:41 PM;Always;;TeamA@abc.com'
+    tags_policy_update: 'Monday;11:15 PM;Always;;TeamA@abc.com'
   }
   dependsOn:[
     Lag
@@ -339,7 +339,7 @@ module Win03 'ModuleVM.bicep' = if (VmWindows_2012R2) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:40 PM;Always;*java*;'
+    tags_policy_update: 'Monday;11:15 PM;Always;*java*;'
   }
   dependsOn:[
     Lag
@@ -363,7 +363,7 @@ module Lnx01 'ModuleVM.bicep' = if (VmUbuntu_20_04) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:37 PM;Always;;'
+    tags_policy_update: 'Monday;11:15 PM;Always;;'
   }
   dependsOn:[
     Lag
@@ -387,7 +387,7 @@ module Lnx02 'ModuleVM.bicep' = if (VmUbuntu_18_04) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:36 PM;Always;*java*,*oracle*;TeamB@abc.com'
+    tags_policy_update: 'Monday;11:16 PM;Always;*java*,*oracle*;TeamB@abc.com'
   }
   dependsOn:[
     Lag
@@ -411,7 +411,7 @@ module Lnx03 'ModuleVM.bicep' = if (VmCentOS_7_4) {
     WorkspaceKey: listKeys(Lag.id, '2015-03-20').primarySharedKey
     adminUsername: adminUsername
     adminPassword: adminPassword
-    tags_policy_update: 'Monday;10:35 PM;Always;*java*,*oracle*;TeamB@abc.com'
+    tags_policy_update: 'Monday;11:17 PM;Always;*java*,*oracle*;TeamB@abc.com'
   }
   dependsOn:[
     Lag
