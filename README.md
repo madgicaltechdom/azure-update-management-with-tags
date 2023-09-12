@@ -89,5 +89,5 @@ Infrastructure deployment will take around 5 minutes and it can take until 20 mi
 
 
 # Output images
-![VM machines](docs/vm-machines.png)
+![VM machines](/docs/vm-machines.png)
 ![Runbooks](docs/vm-runbook.png)
