@@ -59,9 +59,6 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
   * SendGridAPIKey (type: secure string): API access key provided by SendGrid to use your account
   * SendGridSender (type: string): Sender email address (from) configured on SendGrid
 
-Here is a *partial* screenshot of deployed resources:
-![Infrastructure](./docs/quickstart-infrastructure.png) 
-
 **Quick start:**
 
 Step-by-step user guide [Part 1](https://us05web.zoom.us/clips/share/BHVzMDQgG5b4qm6TZeEBrohDKyWQ9tNNJRBSiuXw38Ofe4BQF7k)
