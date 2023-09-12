@@ -60,7 +60,7 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
   * SendGridSender (type: string): Sender email address (from) configured on SendGrid
 
 Here is a *partial* screenshot of deployed resources:
-![Infrastructure](docs/quickstart-infrastructure.png) 
+![Infrastructure](./docs/quickstart-infrastructure.png) 
 
 **Quick start:**
 
@@ -89,5 +89,5 @@ Infrastructure deployment will take around 5 minutes and it can take until 20 mi
 
 
 # Output images
-![VM machines](/docs/vm-machines.png)
-![Runbooks](docs/vm-runbook.png)
+![VM machines](./docs/vm-machines.jpg)
+![Runbooks](./docs/vm-runbook.jpg)
