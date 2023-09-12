@@ -71,12 +71,12 @@ Step-by-step user guide [Part 1](https://us05web.zoom.us/clips/share/BHVzMDQgG5b
 
 # Clone the repo with following command
 
-$ git clone https://github.com/mastechdom/Azure-vm-update-management-with-tags.git
+$ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags.git
 
 ...
 #Then run bicep file to deploye
 
-$ cd Azure-vm-update-management-with-tags/bicep
+$ cd azure-update-management-with-tags/bicep
 ```
 
 * Deploy **without email feature**:
