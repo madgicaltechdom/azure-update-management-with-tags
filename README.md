@@ -88,6 +88,7 @@ Infrastructure deployment will take around 5 minutes and it can take until 20 mi
 
 
 
+
 # Output images
-![VM machines](./docs/vm-machines.jpg)
-![Runbooks](./docs/vm-runbook.jpg)
+![vm-machines](https://github.com/madgicaltechdom/azure-update-management-with-tags/assets/91054127/fe26c4b1-3208-4046-9788-6df50195dee7)
+![vm-runbook](https://github.com/madgicaltechdom/azure-update-management-with-tags/assets/91054127/78c3df0c-5b02-44c5-8b26-2e8d77d447c9)
