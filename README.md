@@ -46,6 +46,45 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
 
 **Quick start:**
 
+Azure Update Management for Windows and Ubuntu Machines. We'll cover the following tasks:
+
+* Step 1: Login to azure portal and create the Resource Group
+
+* Step 2: Open code in VS editor and Changing Time Zone
+  Use the PowerShell script provided at this link: UM-ScheduleUpdatesWithVmsTags.ps1 to change the timezone for your machines. This would be our repository(we would make that public)
+
+* Step 3: Adding Tag Policy Update
+  Update the tag policy as specified in the main.bicep file.
+  **Note**: In policy tag keep your patch time more than 20 minutes after at the current time.
+
+* Step 4: Running the Bicep Script
+  Run the Bicep script to apply the changes to your Azure environment.
+  Wait for the resources to be generated.
+
+* Step 5: Goto azure portal and Open Automation Account
+  Navigate to the Azure Automation Account that you created.
+  Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group.
+  Show the Jobs section to demonstrate scheduled tasks.
+
+* Step 6: Open the Solution (poc-updatemanagement)
+  Navigate to the "poc-updatemanagement" solution.
+  Show the summary of the current patch management status.
+
+* Step 7: Snapshot After your schedule time.
+  Wait for your schedule time.
+  After the specified time, show the snapshot of the machines mentioned in step 3.
+
+* Step 8: Open Automation Account (Again)
+  Return to the Automation Account.
+  Show the Jobs section again to demonstrate patch management tasks along with Pre and Post tasks.
+
+* Step 9: Open the Solution (poc-updatemanagement - Again)
+  Go back to the "poc-updatemanagement" solution.
+  Show the updated summary of current patch management to demonstrate that it's working as expected.
+
+* Conclusion:
+    In this video, we've successfully set up and demonstrated Azure Update Management for Windows and Ubuntu Machines. This ensures that your systems are up-to-date and secure.
+
 Step-by-step user guide [Part 1](https://us05web.zoom.us/clips/share/BHVzMDQgG5b4qm6TZeEBrohDKyWQ9tNNJRBSiuXw38Ofe4BQF7k)
 [Part 2](https://us05web.zoom.us/clips/share/BHVzMDQgoiTes0AggeOFVSbwUJjT6iX8KAp89ra77BqWaquBjN0)
 
