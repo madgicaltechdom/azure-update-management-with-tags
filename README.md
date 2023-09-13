@@ -1,26 +1,11 @@
 # azure-vm-update-management-with-tags
 
-This repo is a set of Runbooks that allows you to schedule Azure Virtual Machines patching by simply applying the `POLICY_UPDATE` tag on machines.
+This repo is a set of Runbooks that allows you to schedule Azure Virtual Machines patching (update-management) by simply applying the `POLICY_UPDATE` tag on machines.
+Here is the syntax to follow for the POLICY_UPDATE tag:
+Examples:
+POLICY_UPDATE=Friday;10:00 PM;Never;*java*; will be patched every Friday, at 10:00 PM. Even if updates require reboot, the VM will not be rebooted. Packages containing java string will be excluded.
 
-## Features
-
-Shared Runbooks allows you to:
-* Patch **Azure Virtual Machines** with [Supported OS](https://docs.microsoft.com/en-us/azure/automation/update-management/operating-system-requirements#supported-operating-systems)
-* Patch in a multi-subscriptions context: the system-assigned managed identity must have **Contributor** role assigned on each subscription.
-* Perform several pre and post patching tasks:
-  * Pre scripts, before patching:
-    * [OPTIONAL] Snapshot VM OS disk 
-    * [OPTIONAL] Start VM if it is stopped 
-  * Post scripts, after patching:
-    * [OPTIONAL] Shutdown VM if it was started by pre-script.
-    * [OPTIONAL] Send a patching report email
-* Support Azure Arc Server
-  * Pre-scripts and post scripts are not supported for Azure Arc Servers
-    * You can schedule Azure Arc Servers restarts using `POLICY_RESTART` tag with Runbooks available in [this repo](https://github.com/madgicaltechdom/azure-vm-update-management-with-tags)
-
-
-## Runbooks description
-
+Runbooks description:
 There is a set of 5 Runbooks that must be deployed in the Automation Account:
 * **UM-ScheduleUpdatesWithVmsTags**: Must be scheduled (at least) daily. Searches for all machines with the `POLICY_UPDATE` tag and configures the Update Management schedules.
 * **UM-PreTasks**: Triggered before patching, it can perform several optional actions like OS disk snapshot, start VM if stopped, etc..
@@ -29,9 +14,9 @@ There is a set of 5 Runbooks that must be deployed in the Automation Account:
 * **UM-CleanUp-Schedules**: Must be schedule (at least) daily. It removes Update Management schedules for VM machines that not longer have the `POLICY_UPDATE` tag
 
 ## Prerequisites
-  - Create an Azure account
-  - install Azure cli
-  - install bicep
+  - ![Create an Azure account](https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?client_id=8e0e8db5-b713-4e91-98e6-470fed0aa4c2&response_type=code%20id_token&scope=openid%20profile&state=OpenIdConnect.AuthenticationProperties%3DCW8R5JHojzMLy-5y5Eo2FYZ9ykAOBMq7FTr_kzVCzk9RVzEJYYUP1TowtzLYYDstYRTumBD3DUJHPylZ9oRSj1qVVKlFXZz6YaWwa1S3E1RW3dZAknRhkUhmq-jgIQJFakxuxd6ZbZo1ijNd8IDIGG2MgsnnVwR_iGIKl18ioDnqEI0SQv6vdK6Yk1SOcnU0OehQ5-O73KvkMSs8pCzI5gz4WAjq3La-tWqs06Zi82G097Lwwf0Bxt9r6zTpbcQ_0V4eODU3rsjEx4m0GWDETg1ivRukWJIFm9R7OCG1Ko_TVLIzg_PGd2B5x8DMuQrpY9z9gA5oLY8hhZaRfIEbUOiav9Dri85uM_C6D0csvjhN63kA1yIaG2emsnGil8W0TIL3d1YZK4PRCHs2rr9I36TsOtPh3wZW1MzAHUJsZMlPLYLAh0jDHn6XXo03cRlSUZQZcD1_neXNVe5uP7Ayxmpc7yvG9bMde-WUWWMeaw4&response_mode=form_post&nonce=638301826653929237.MGI3MzZlZTktNjA3My00OWVmLWEyNWEtMDRlNjkzN2EzYmVjYzhkYWE5NGItNDg1ZC00ZGNhLWI0NTAtMzZmNmNkYmEwOGEx&redirect_uri=https%3A%2F%2Fsignup.azure.com%2Fapi%2Fuser%2Flogin&max_age=86400&post_logout_redirect_uri=https%3A%2F%2Fsignup.azure.com%2Fsignup%3Foffer%3Dms-azr-0044p%26appId%3D102%26ref%3D%26redirectURL%3Dhttps%3A%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%2F%26l%3Den-in%26srcurl%3Dhttps%3A%2F%2Fazure.microsoft.com%2Ffree&x-client-SKU=ID_NET472&x-client-ver=6.30.1.0)
+  - ![install Azure cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+  - ![install bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install#install-manually)
 
 Automation Account must have the following modules installed:
 * Az.ResourceGraph, >= 0.11.0
@@ -40,7 +25,7 @@ Automation Account must have the following modules installed:
 * Az.Compute >= 4.17.1
 
 **Note**: Runbooks must be deployed using Powershell Runtime v5.1 
-
+          Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group
 # Getting started
 
 ## Quick deployment (for testing purpose)
