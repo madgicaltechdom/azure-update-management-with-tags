@@ -85,8 +85,13 @@ Azure Update Management for Windows and Ubuntu Machines. We'll cover the followi
 * Conclusion:
     In this video, we've successfully set up and demonstrated Azure Update Management for Windows and Ubuntu Machines. This ensures that your systems are up-to-date and secure.
 
-Step-by-step user guide [Part 1](https://us05web.zoom.us/clips/share/BHVzMDQgG5b4qm6TZeEBrohDKyWQ9tNNJRBSiuXw38Ofe4BQF7k)
-[Part 2](https://us05web.zoom.us/clips/share/BHVzMDQgoiTes0AggeOFVSbwUJjT6iX8KAp89ra77BqWaquBjN0)
+**Note:** In case your machines are not schedule according to you tags because of permissions issues. Then you need assign permission to your resource group and then run runbook (UM-ScheduleUpdatesWithVmsTags) manually then your schedule worked fine.
+If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
+
+Step-by-step user guide 
+* [Part 1](https://drive.google.com/file/d/1_LWuTWXkLA21Bk2e-YKJpgAR87jHiSWL/view?usp=drive_link)
+* [Part 2](https://drive.google.com/file/d/11mwDKzV1c6es51LrriejnGJHlLS4fIZ2/view?usp=drive_link)
+* [Part 3](https://drive.google.com/file/d/1O9vMRh89NmIdn5uil79DEMeWYUHCoeQj/view?usp=sharing)
 
 ```bash
 
