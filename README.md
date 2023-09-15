@@ -44,6 +44,31 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
   * SendGridAPIKey (type: secure string): API access key provided by SendGrid to use your account
   * SendGridSender (type: string): Sender email address (from) configured on SendGrid
 
+**Step-by-step user guide:**   
+* [Part 1](https://drive.google.com/file/d/1_LWuTWXkLA21Bk2e-YKJpgAR87jHiSWL/view?usp=drive_link)
+* [Part 2](https://drive.google.com/file/d/11mwDKzV1c6es51LrriejnGJHlLS4fIZ2/view?usp=drive_link)
+* [Part 3](https://drive.google.com/file/d/1O9vMRh89NmIdn5uil79DEMeWYUHCoeQj/view?usp=sharing)
+
+```bash
+
+# Clone the repo with following command
+
+$ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags.git
+
+...
+#Then run bicep file to deploye
+
+$ cd azure-update-management-with-tags/bicep
+```
+
+* Deploy **without email feature**:
+```bash
+$ az deployment group create --resource-group your-resource-group-name --template-file main.bicep
+```
+
+Infrastructure deployment will take around 5 minutes and it can take until 20 minutes to have update agent ready and first patching assessment. 
+
+
 **Quick start:**
 
 Azure Update Management for Windows and Ubuntu Machines. We'll cover the following tasks:
@@ -87,32 +112,6 @@ Azure Update Management for Windows and Ubuntu Machines. We'll cover the followi
 
 **Note:** In case your machines are not schedule according to you tags because of permissions issues. Then you need assign permission to your resource group and then run runbook (UM-ScheduleUpdatesWithVmsTags) manually then your schedule worked fine.
 If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
-
-Step-by-step user guide 
-* [Part 1](https://drive.google.com/file/d/1_LWuTWXkLA21Bk2e-YKJpgAR87jHiSWL/view?usp=drive_link)
-* [Part 2](https://drive.google.com/file/d/11mwDKzV1c6es51LrriejnGJHlLS4fIZ2/view?usp=drive_link)
-* [Part 3](https://drive.google.com/file/d/1O9vMRh89NmIdn5uil79DEMeWYUHCoeQj/view?usp=sharing)
-
-```bash
-
-# Clone the repo with following command
-
-$ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags.git
-
-...
-#Then run bicep file to deploye
-
-$ cd azure-update-management-with-tags/bicep
-```
-
-* Deploy **without email feature**:
-```bash
-$ az deployment group create --resource-group your-resource-group-name --template-file main.bicep
-```
-
-Infrastructure deployment will take around 5 minutes and it can take until 20 minutes to have update agent ready and first patching assessment. 
-
-
 
 
 # Output images
