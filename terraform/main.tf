@@ -28,7 +28,7 @@ resource "azurerm_automation_account" "automationAccount" {
 
 # Deploy log analytics workspace
 resource "azurerm_log_analytics_workspace" "rezo" {
-  name                = "demosglaw"
+  name                = "rezoanalytics"
   location            = azurerm_resource_group.baseInfraUM_rg.location
   resource_group_name = azurerm_resource_group.baseInfraUM_rg.name
   sku                 = "PerGB2018"
