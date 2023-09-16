@@ -108,12 +108,15 @@ $vmIds | ForEach-Object {
         Write-Output "$($vm.name) - OS Disk Snapshot Begin"
         $snapshotdisk = $vm.StorageProfile
         $OSDiskSnapshotConfig = New-AzSnapshotConfig -SourceUri $snapshotdisk.OsDisk.ManagedDisk.id -CreateOption Copy -Location $vm.Location -OsType $vmOS
-        $snapshotNameOS = "$($snapshotPrefix)$($snapshotdisk.OsDisk.Name)_$(Get-Date -Format yyyyMMdd_HHmm)"
+        # Custom code to keep the snapshot name short
+        $diskName = $snapshotdisk.OsDisk.Name[0..5] -join ""
+        $snapshotNameOS = "$($snapshotPrefix)$($diskName)_$(Get-Date -Format yyyyMMdd_HHmm)"
 
         try {
             New-AzSnapshot -ResourceGroupName $rg -SnapshotName $snapshotNameOS -Snapshot $OSDiskSnapshotConfig -ErrorAction Stop
         }
         catch {
+            Write-Log $PSItem.ToString()
             $_
         }
         Write-Output "$($vm.name) - OS Disk Snapshot End"

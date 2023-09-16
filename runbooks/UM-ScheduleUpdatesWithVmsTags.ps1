@@ -35,7 +35,7 @@ $PostTaskRunbookName = "UM-PostTasks"
 $onboardAzureArcServersEnabled = $true
 
 # Maintenance window (minutes) to perform patching. Minimum: 30 minutes. Maximum: 6 hours 
-$duration = New-TimeSpan -Hours 2
+$duration = New-TimeSpan -Minutes 30
 
 # TimeZone - Can be the IANA ID or the Windows Time Zone ID
 $timezone = "India Standard Time" # India - Central Asia Time
