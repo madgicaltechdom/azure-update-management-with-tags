@@ -6,7 +6,7 @@ provider "azurerm" {
 
 # Deploy demo resource group
 resource "azurerm_resource_group" "baseInfraUM_rg" {
-  name     = "training-update-management-1"
+  name     = "training-update"
   location = "centralindia"
   # lifecycle {
   #   prevent_destroy = true
@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "baseInfraUM_rg" {
 
 # Deploy automation account
 resource "azurerm_automation_account" "automationAccount" {
-  name                = "automationAccount-04"
+  name                = "automationAccount-03"
   location            = azurerm_resource_group.baseInfraUM_rg.location
   resource_group_name = azurerm_resource_group.baseInfraUM_rg.name
   sku_name            = "Basic"
