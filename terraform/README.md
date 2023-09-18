@@ -20,9 +20,20 @@ Import Existing Resources
 
 Before applying the Terraform configuration, you need to import your existing Azure Resource Group and Automation Account into Terraform. Run the following commands:
 
-shellCopy code
 
-`# Initialize Terraform terraform init # Import Resource Group terraform import azurerm_resource_group.baseInfraUM_rg /subscriptions/<subscription_id>/resourceGroups/<resource_group_name> # Import Automation Account terraform import azurerm_automation_account.automationAccount /subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.Automation/automationAccounts/<automation_account_name>`
+### Initialize Terraform
+```
+terraform init
+``` 
+### Import Resource Group
+```
+terraform import azurerm_resource_group.baseInfraUM_rg /subscriptions/<subscription_id>/resourceGroups/<resource_group_name>
+```
+### Import Automation Account
+```
+terraform import azurerm_automation_account.automationAccount /subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.Automation/automationAccounts/<automation_account_name>
+
+```
 
 Replace `<subscription_id>`, `<resource_group_name>`, and `<automation_account_name>` with your specific values.
 
