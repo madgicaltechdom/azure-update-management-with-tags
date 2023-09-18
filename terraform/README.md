@@ -14,6 +14,8 @@ Before you get started, ensure you have the following prerequisites:
     
 3.  **Azure Resource Group and Automation Account**: You should have an existing Azure Resource Group and Automation Account. If not, create them using the Azure Portal or Azure CLI. The Automation account must use a System-assigned Managed Identity and The System-assigned Managed Identity must have Contributor role.
     
+Checkout steps to be added
+-------------------------
 
 Import Existing Resources
 -------------------------
