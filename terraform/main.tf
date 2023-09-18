@@ -6,7 +6,7 @@ provider "azurerm" {
 
 # Deploy demo resource group
 resource "azurerm_resource_group" "baseInfraUM_rg" {
-  name     = "training-update"
+  name     = var.resource_group_name
   location = "centralindia"
   # lifecycle {
   #   prevent_destroy = true
@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "baseInfraUM_rg" {
 
 # Deploy automation account
 resource "azurerm_automation_account" "automationAccount" {
-  name                = "automationAccount-03"
+  name                = var.automation_account_name
   location            = azurerm_resource_group.baseInfraUM_rg.location
   resource_group_name = azurerm_resource_group.baseInfraUM_rg.name
   sku_name            = "Basic"
@@ -27,8 +27,8 @@ resource "azurerm_automation_account" "automationAccount" {
 }
 
 # Deploy log analytics workspace
-resource "azurerm_log_analytics_workspace" "rezo" {
-  name                = "rezoanalytics"
+resource "azurerm_log_analytics_workspace" "log_anaytics_workspace" {
+  name                = var.log_analytics_workspace
   location            = azurerm_resource_group.baseInfraUM_rg.location
   resource_group_name = azurerm_resource_group.baseInfraUM_rg.name
   sku                 = "PerGB2018"
@@ -38,7 +38,7 @@ resource "azurerm_log_analytics_workspace" "rezo" {
 # Link the automation account to the log analytics workspace
 resource "azurerm_log_analytics_linked_service" "link_law_automation" {
   resource_group_name = azurerm_resource_group.baseInfraUM_rg.name
-  workspace_id        = azurerm_log_analytics_workspace.rezo.id
+  workspace_id        = azurerm_log_analytics_workspace.log_anaytics_workspace.id
   read_access_id      = azurerm_automation_account.automationAccount.id
 }
 
@@ -47,8 +47,8 @@ resource "azurerm_log_analytics_solution" "automation_account_solutions_updates"
   solution_name         = "Updates"
   location              = azurerm_resource_group.baseInfraUM_rg.location
   resource_group_name   = azurerm_resource_group.baseInfraUM_rg.name
-  workspace_resource_id = azurerm_log_analytics_workspace.rezo.id
-  workspace_name        = azurerm_log_analytics_workspace.rezo.name
+  workspace_resource_id = azurerm_log_analytics_workspace.log_anaytics_workspace.id
+  workspace_name        = azurerm_log_analytics_workspace.log_anaytics_workspace.name
 
   plan {
     publisher = "Microsoft"
