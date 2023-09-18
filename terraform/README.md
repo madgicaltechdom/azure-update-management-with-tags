@@ -119,9 +119,15 @@ Destroy the Patching Automation
 
 If you ever need to tear down the patching automation, you can use Terraform to destroy the resources:
 
-shellCopy code
-
 ```terraform destroy```
+
+### Reference Videos
+
+For detailed instructions and visual guidance, you can refer to the following reference videos:
+
+1.  [Video Title 1](insert-video-link-here1): (Add a description of the content covered in this video.)
+    
+2.  [Video Title 2](insert-video-link-here2): (Add a description of the content covered in this video.)
 
 Additional Resources
 --------------------
