@@ -39,6 +39,7 @@ Replace `<subscription_id>`, `<resource_group_name>`, and `<automation_account_n
 
 Configure Virtual Machines With POLICY_UPDTAE Tag
 -----------------------------
+You need to add `POLICY_UPDATE` to your existing Virtual Machines. 
 
 Here is the syntax to follow for the `POLICY_UPDATE` tag:
 
@@ -58,20 +59,60 @@ Now that you have imported your existing resources and configured the patch sche
 
 1.  Run the following command to plan the deployment and ensure there are no errors:
     
-    shellCopy code
-    
-    `terraform plan`
+    ```terraform plan```
     
 2.  If the plan looks good, apply the Terraform configuration:
     
-    shellCopy code
     
-    `terraform apply`
+    ```terraform apply```
     
 3.  Confirm the changes by typing `yes` when prompted.
     
 
 Terraform will now deploy the necessary resources and configure the patching schedule for your Azure Virtual Machines.
+
+Steps To Add Virtual Machines to Log Analytics WorkSpace
+-----
+
+### 1\. Sign In to Azure Portal
+
+1.  Go to the [Azure portal](https://portal.azure.com/) and sign in with your Azure account.
+
+### 2\. Navigate to Log Analytics Workspace
+
+1.  In the Azure portal, click on "Resource groups" in the left-hand menu.
+    
+2.  Select the resource group where your Log Analytics workspace is located.
+    
+3.  In the resource group, click on your Log Analytics workspace to open it.
+    
+
+### 3\. Configure Data Collection
+
+1.  In the Log Analytics workspace, click on "Data" under the "Settings" section in the left-hand menu.
+    
+2.  Click on "Virtual Machines" under "Collect data."
+    
+
+### 4\. Add Virtual Machines
+
+1.  Click on the "Add" button to start adding virtual machines.
+    
+2.  In the "Configuration" tab:
+    
+    *   Select the target Log Analytics workspace from the dropdown.
+    *   Choose the desired data types to collect. This could include system and custom logs.
+3.  In the "Virtual Machines" tab:
+    
+    *   Select the Azure Virtual Machines that you want to enable for log forwarding. You can select multiple VMs.
+4.  Click the "Add" button to confirm your selection.
+    
+
+### 5\. Save Configuration
+
+1.  Review your configuration settings to ensure they are accurate.
+    
+2.  Click the "Save" button to save the configuration.
 
 Destroy the Patching Automation
 -------------------------------
@@ -80,7 +121,7 @@ If you ever need to tear down the patching automation, you can use Terraform to 
 
 shellCopy code
 
-`terraform destroy`
+```terraform destroy```
 
 Additional Resources
 --------------------
