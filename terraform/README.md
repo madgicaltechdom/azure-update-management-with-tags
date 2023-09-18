@@ -8,7 +8,7 @@ Prerequisites
 
 Before you get started, ensure you have the following prerequisites:
 
-1.  **Azure CLI**: Install the Azure CLI by following the instructions [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+1.  **Azure CLI**: Install the Azure CLI by following the instructions [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). You should run `az login` and authenticate your user.
     
 2.  **Terraform**: Install Terraform by following the instructions [here](https://learn.hashicorp.com/tutorials/terraform/install-cli).
     
