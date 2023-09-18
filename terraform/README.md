@@ -42,7 +42,7 @@ Configure Virtual Machines With POLICY_UPDTAE Tag
 
 Here is the syntax to follow for the `POLICY_UPDATE` tag:
 
-[![POLICY_UPDATE Syntax](docs/tag_syntax.png)](docs/tag_syntax.png)
+![POLICY_UPDATE Syntax](https://raw.githubusercontent.com/madgicaltechdom/azure-update-management-with-tags/main/docs/tag_syntax.png)
 
 **Examples**:
 
