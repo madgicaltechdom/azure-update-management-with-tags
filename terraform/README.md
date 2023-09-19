@@ -131,9 +131,9 @@ If you ever need to tear down the patching automation, you can use Terraform to 
 
 For detailed instructions and visual guidance, you can refer to the following reference videos:
 
-1.  [Installation and configuration on VM machines](https://drive.google.com/file/d/1mFDuM6KR5rxY5XCy_uFpDtdJPHWUSklj/view?usp=sharing): (A complete instructions to run the terraform script and configure existing VM for patch management)
+1.  [Installation and configuration on VM machines](https://drive.google.com/file/d/1yQm4fBcdNkwuZebzfSwGhzFiAev7kZ0D/view): (A complete instructions to run the terraform script and configure existing VM for patch management)
     
-2.  [Patch installation and Snapshot Verification](https://drive.google.com/file/d/10UeJSsBFMV39cMI3MbieEC9e9IuIN26g/view?usp=sharing): ( A verification video demontrating the patch management and snapshot of the virtual machine)
+2.  [Patch installation and Snapshot Verification](https://drive.google.com/file/d/1nXdNy88Sq_Kp0Hey-BKtwrZX0kbaYqHf/view?usp=drive_link): ( A verification video demonstrating the patch management and snapshot of the virtual machine)
 
 Additional Resources
 --------------------
