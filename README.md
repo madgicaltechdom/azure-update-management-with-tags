@@ -35,6 +35,7 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
 * Deploy an Automation Account using a System-assigned Magaged Identity
   * Install Update Management solution
   * Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group
+  * [Video](https://drive.google.com/file/d/1Mo7nq79shmxYFsTVR6e06zJSneG-q2CT/view?usp=drive_link)
 * Deploy 5 Runbooks to the Automation Accounts and schedule few of them
 * Deploy 1 VNet
 * Deploy 6 VMs (3 Windows, 3 Linux) in the VNet

@@ -43,6 +43,25 @@ terraform import azurerm_automation_account.automationAccount /subscriptions/<su
 
 Replace `<subscription_id>`, `<resource_group_name>`, and `<automation_account_name>` with your specific values.
 
+### Note: If you need to remove terraform state 
+
+First, you need to identify the resource you want to remove. You can do this by running the terraform state list command, which will list all the resources in your current state.
+
+```
+terraform state list
+
+```
+```
+terraform state rm <resource_address>
+
+```
+After removing the resource, verify it by running the terraform state list command again. The removed resource should no longer appear in the list.
+
+```
+terraform state list
+
+```
+
 Configure Virtual Machines With POLICY_UPDTAE Tag
 -----------------------------
 You need to add `POLICY_UPDATE` to your existing Virtual Machines. 
