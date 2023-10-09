@@ -51,6 +51,8 @@ First, you need to identify the resource you want to remove. You can do this by 
 terraform state list
 
 ```
+Once you’ve identified the resource, you can remove it using the terraform state rm command followed by the resource address.
+
 ```
 terraform state rm <resource_address>
 
