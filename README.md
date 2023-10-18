@@ -46,9 +46,12 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
   * SendGridSender (type: string): Sender email address (from) configured on SendGrid
 
 **Step-by-step user guide:**   
+* [Complete video of task overview](https://drive.google.com/file/d/1hDAksoPiYcBi1CbYkya_6vfVE7JtReNS/view?usp=sharing)
+* You can watch below video for more information.
 * [Part 1](https://drive.google.com/file/d/1_LWuTWXkLA21Bk2e-YKJpgAR87jHiSWL/view?usp=drive_link)
 * [Part 2](https://drive.google.com/file/d/11mwDKzV1c6es51LrriejnGJHlLS4fIZ2/view?usp=drive_link)
 * [Part 3](https://drive.google.com/file/d/1O9vMRh89NmIdn5uil79DEMeWYUHCoeQj/view?usp=sharing)
+
 
 ```bash
 
