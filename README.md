@@ -83,11 +83,6 @@ $ az deployment group create --resource-group your-resource-group-name --templat
 Infrastructure deployment will take around 5 minutes and it can take until 20 minutes to have update agent ready and first patching assessment. 
 
 
-**Quick start:**
-
-Azure Update Management for Windows and Ubuntu Machines. We'll cover the following tasks:
-
-
 * Step 5: Goto azure portal and Open Automation Account
   Navigate to the Azure Automation Account that you created.
   Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group.
@@ -100,6 +95,7 @@ Azure Update Management for Windows and Ubuntu Machines. We'll cover the followi
 
 **Note:** 
 If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
+Now wait for schedule time.
 
 * Step 6: Open the Solution (poc-updatemanagement)
   Navigate to the "poc-updatemanagement" solution.
