@@ -52,7 +52,7 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
 
 ```bash
 
-* Step 1: Login to azure portal and create the Resource Group
+
 
 # Clone the repo with following command
 
@@ -63,15 +63,21 @@ $ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags
 
 $ cd azure-update-management-with-tags/bicep
 
+...
+
+# Then login to azure portal and create the Resource Group
+
+$ az login
+
 ```
-* Step 2: Open code in VS editor and Changing Time Zone
+* Step 1: Open code in VS editor and Changing Time Zone
   Use the PowerShell script provided at this link: UM-ScheduleUpdatesWithVmsTags.ps1 to change the timezone for your machines. This would be our repository(we would make that public)
   
-* Step 3: Adding Tag Policy Update
+* Step 2: Adding Tag Policy Update
   Update the tag policy as specified in the main.bicep file.
   **Note**: In policy tag keep your patch time more than 20 minutes after at the current time.
 
-* Step 4: Running the Bicep Script using below command.
+* Step 3: Running the Bicep Script using below command.
   Run the Bicep script to apply the changes to your Azure environment.
   Wait for the resources to be generated.
 
@@ -83,7 +89,7 @@ $ az deployment group create --resource-group your-resource-group-name --templat
 Infrastructure deployment will take around 5 minutes and it can take until 20 minutes to have update agent ready and first patching assessment. 
 
 
-* Step 5: Goto azure portal and Open Automation Account
+* Step 4: Goto azure portal and Open Automation Account
   Navigate to the Azure Automation Account that you created.
   Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group.
   Show the Jobs section to demonstrate scheduled tasks.
@@ -97,18 +103,17 @@ Infrastructure deployment will take around 5 minutes and it can take until 20 mi
 If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
 Now wait for schedule time.
 
-* Step 6: Open the Solution (poc-updatemanagement)
-  Navigate to the "poc-updatemanagement" solution.
-  Show the summary of the current patch management status.
+* Step 5: At your schedule go to your automation account and click on job tab in left menu. Here you will see your all job which is    
+  you schedule. Now wait to complete your jobs.
 
-* Step 7: Snapshot After your schedule time.
+* Step 6: Snapshot After your schedule time.
   Wait for your schedule time and successfully completion of task.
 
-* Step 8: Open Automation Account (Again)
+* Step 7: Open Automation Account (Again)
   Return to the Automation Account.
   Show the Jobs section again to demonstrate patch management tasks along with Pre and Post tasks.
 
-* Step 9: Open the Solution (poc-updatemanagement - Again)
+* Step 8: Open the Solution (poc-updatemanagement - Again)
   Go back to the "poc-updatemanagement" solution.
   Show the updated summary of current patch management to demonstrate that it's working as expected.
 
