@@ -52,6 +52,8 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
 
 ```bash
 
+* Step 1: Login to azure portal and create the Resource Group
+
 # Clone the repo with following command
 
 $ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags.git
@@ -60,7 +62,18 @@ $ git clone https://github.com/madgicaltechdom/azure-update-management-with-tags
 #Then run bicep file to deploye
 
 $ cd azure-update-management-with-tags/bicep
+
 ```
+* Step 2: Open code in VS editor and Changing Time Zone
+  Use the PowerShell script provided at this link: UM-ScheduleUpdatesWithVmsTags.ps1 to change the timezone for your machines. This would be our repository(we would make that public)
+  
+* Step 3: Adding Tag Policy Update
+  Update the tag policy as specified in the main.bicep file.
+  **Note**: In policy tag keep your patch time more than 20 minutes after at the current time.
+
+* Step 4: Running the Bicep Script using below command.
+  Run the Bicep script to apply the changes to your Azure environment.
+  Wait for the resources to be generated.
 
 * Deploy **without email feature**:
 ```bash
@@ -74,31 +87,26 @@ Infrastructure deployment will take around 5 minutes and it can take until 20 mi
 
 Azure Update Management for Windows and Ubuntu Machines. We'll cover the following tasks:
 
-* Step 1: Login to azure portal and create the Resource Group
-
-* Step 2: Open code in VS editor and Changing Time Zone
-  Use the PowerShell script provided at this link: UM-ScheduleUpdatesWithVmsTags.ps1 to change the timezone for your machines. This would be our repository(we would make that public)
-
-* Step 3: Adding Tag Policy Update
-  Update the tag policy as specified in the main.bicep file.
-  **Note**: In policy tag keep your patch time more than 20 minutes after at the current time.
-
-* Step 4: Running the Bicep Script
-  Run the Bicep script to apply the changes to your Azure environment.
-  Wait for the resources to be generated.
 
 * Step 5: Goto azure portal and Open Automation Account
   Navigate to the Azure Automation Account that you created.
   Assign *Contributor* role on the System-assigned Managed Identity to the Resource Group.
   Show the Jobs section to demonstrate scheduled tasks.
 
+* After assigning the role, goto runbooks tab in left menu of (same automation account as above) automation account. You got all 
+  your runbooks. Click on the UM-ScheduleUpdatesWithVmsTags runbook then start it and wait for it run successfully.
+
+* Then back to your automation account. Go to schedule tab in left menu and click you got your all schedules.
+
+**Note:** 
+If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
+
 * Step 6: Open the Solution (poc-updatemanagement)
   Navigate to the "poc-updatemanagement" solution.
   Show the summary of the current patch management status.
 
 * Step 7: Snapshot After your schedule time.
-  Wait for your schedule time.
-  After the specified time, show the snapshot of the machines mentioned in step 3.
+  Wait for your schedule time and successfully completion of task.
 
 * Step 8: Open Automation Account (Again)
   Return to the Automation Account.
@@ -111,8 +119,7 @@ Azure Update Management for Windows and Ubuntu Machines. We'll cover the followi
 * Conclusion:
     In this video, we've successfully set up and demonstrated Azure Update Management for Windows and Ubuntu Machines. This ensures that your systems are up-to-date and secure.
 
-**Note:** In case your machines are not schedule according to you tags because of permissions issues. Then you need assign permission to your resource group and then run runbook (UM-ScheduleUpdatesWithVmsTags) manually then your schedule worked fine.
-If your schedule time or date are incorrect then simply go to automation account and then got to schedule tab in left menu you will see your all scheduled tasks if schedule time or date are incorrect then simply click on schedule then a modal is open here you can reschedule your time and date accordingly and save then wait for your schedule time. It works fine. 
+
 
 
 # Output images
