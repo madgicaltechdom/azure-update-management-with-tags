@@ -156,6 +156,36 @@ For detailed instructions and visual guidance, you can refer to the following re
     
 2.  [Verification](https://drive.google.com/file/d/1nXdNy88Sq_Kp0Hey-BKtwrZX0kbaYqHf/view?usp=drive_link): (Shows the result of the scheduler, and the snapshot of the machine and summary of the Updates(rezoanalytics) )
 
+
+### If you want to enable patching report email feature later, just update SendGridSender and SendGridAPIKey Automation Account variables.
+
+* Make sure pulled the latest code from the github repository.
+
+* Then you can simply go to variables.tf file and the update below lines:
+  ```ruby
+        # Define the variable for the send grid api key
+        variable "sendgrid_api_key" {
+        description = "Name of the send grid api key"
+        type        = string
+        default     = "your send grid api key"
+        }
+
+        # Define the variable for the sender email address
+        variable "sender_email" {
+        description = "Name of the sender email address"
+        type        = string
+        default     = "your sender email address"
+        }
+  ```
+* Follow the same instructions as above mentioned for run terraform script.
+
+**Note:**
+* If your runbook giving error and not run successfully then goto you automation account and left menu tab select variables.
+* Here you change your send grid api key and email with the help of edit.
+* Then restart your runbook again and goto schedules and schedule your vm according to your time.
+
+This run succesfully and you will recieve the notifications email.
+
 Additional Resources
 --------------------
 

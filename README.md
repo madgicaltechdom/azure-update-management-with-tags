@@ -123,6 +123,29 @@ Now wait for schedule time.
 * Conclusion:
     In this video, we've successfully set up and demonstrated Azure Update Management for Windows and Ubuntu Machines. This ensures that your systems are up-to-date and secure.
 
+## If you want to enable patching report email feature later, just update SendGridSender and SendGridAPIKey Automation Account variables.
+
+* You can simply go to main.bicep file and the update below lines:
+  ```ruby
+    param SendGridAPIKey string = 'your send grig key'
+    param SendGridSender string = 'your sender email address'
+  ```
+
+* Update the update-tags, include receiver email address here as below:
+  ```ruby
+    tags_policy_update: 'Wednesday;10:20 AM;Always;*java*,*oracle*;demo.receiver@gmail.com'
+  
+  ```
+
+* run the following command:
+  $ az deployment group create --resource-group MyRg --template-file main.bicep --parameters SendGridSender="no-reply@mydomain.fr" SendGridAPIKey="SG.XXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXX"
+
+**Note:**
+* If your runbook giving error and not run successfully then goto you automation account and left menu tab select variables.
+* Here you change your send grid api key and email with the help of edit.
+* Then restart your runbook again and goto schedules and schedule your vm according to your time.
+
+This run succesfully and you will recieve the notifications email.
 
 
 
