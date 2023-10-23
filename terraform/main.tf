@@ -1,7 +1,7 @@
 
 provider "azurerm" {
   features {}
-  
+
 }
 
 # Deploy demo resource group
@@ -24,6 +24,22 @@ resource "azurerm_automation_account" "automationAccount" {
     type = "SystemAssigned"
   }
 
+}
+
+# Set variable for send grid api key
+resource "azurerm_automation_variable_string" "sendgrid_api_key" {
+  name                    = "SendGridAPIKey"
+  resource_group_name     = azurerm_resource_group.baseInfraUM_rg.name
+  automation_account_name = azurerm_automation_account.automationAccount.name
+  value                   = var.sendgrid_api_key
+}
+
+# Set variable for sender email
+resource "azurerm_automation_variable_string" "sender_email" {
+  name                    = "SendGridSender"
+  resource_group_name     = azurerm_resource_group.baseInfraUM_rg.name
+  automation_account_name = azurerm_automation_account.automationAccount.name
+  value                   = var.sender_email
 }
 
 # Deploy log analytics workspace
@@ -173,7 +189,7 @@ resource "azurerm_automation_schedule" "UM-Schedule-daily" {
   timezone                = "Asia/Kolkata"
   #timezone                = "Australia/Perth"
   #start_time              = "2014-04-15T18:00:15+02:00"
-  description             = "Schedule daily"
+  description = "Schedule daily"
   #week_days               = ["Friday"]
 }
 
