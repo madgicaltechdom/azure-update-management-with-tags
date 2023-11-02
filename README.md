@@ -51,6 +51,7 @@ To quickly test provided Runbooks, use the provided bicep script to deploy a com
 * [Part 1](https://drive.google.com/file/d/1_LWuTWXkLA21Bk2e-YKJpgAR87jHiSWL/view?usp=drive_link)
 * [Part 2](https://drive.google.com/file/d/11mwDKzV1c6es51LrriejnGJHlLS4fIZ2/view?usp=drive_link)
 * [Part 3](https://drive.google.com/file/d/1O9vMRh89NmIdn5uil79DEMeWYUHCoeQj/view?usp=sharing)
+* [How to Connect VM to Azure Log Analytics](https://drive.google.com/file/d/1baXUXuJYfSgnZhPpdu72rRsvX4XC9QeE/view?usp=sharing)
 
 
 ```bash
