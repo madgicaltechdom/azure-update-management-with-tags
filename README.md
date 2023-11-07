@@ -155,24 +155,20 @@ This run succesfully and you will recieve the notifications email.
 ![vm-runbook](https://github.com/madgicaltechdom/azure-update-management-with-tags/assets/91054127/78c3df0c-5b02-44c5-8b26-2e8d77d447c9)
 
 
+
+
+
 ## how to use Azure Update Manager to schedule updates on Virtual Machines 
-Log in to Azure: Access your Azure portal at portal.azure.com.
+* Log in to Azure: Access your Azure portal at portal.azure.com.
+* Navigate to Update Manager: In the Azure portal, search for "Update Manager" and click on it.
+* Create an Update Deployment: Click "Schedule update deployment" to create a new update schedule.
+* Define Schedule: Choose your preferred schedule for updates, like daily or weekly.
+* Select VMs: Pick the virtual machines that need updates.
+* Review Settings: Confirm your settings and click "Create" to schedule the deployment.
+* Monitor Progress: Go back to "Update Manager" to check the deployment's progress.
+* Review Status: Once the updates are applied, review the status to ensure they were successful.
 
-Navigate to Update Manager: In the Azure portal, search for "Update Manager" and click on it.
-
-Create an Update Deployment: Click "Schedule update deployment" to create a new update schedule.
-
-Define Schedule: Choose your preferred schedule for updates, like daily or weekly.
-
-Select VMs: Pick the virtual machines that need updates.
-
-Review Settings: Confirm your settings and click "Create" to schedule the deployment.
-
-Monitor Progress: Go back to "Update Manager" to check the deployment's progress.
-
-Review Status: Once the updates are applied, review the status to ensure they were successful.
-
-You can watch the below video for more information.
-Video link: 
+##### Watch the below video for more information.
+Video link (step-by-step)
 
 
