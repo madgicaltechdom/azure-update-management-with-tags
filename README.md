@@ -169,6 +169,6 @@ This run succesfully and you will recieve the notifications email.
 * Review Status: Once the updates are applied, review the status to ensure they were successful.
 
 ##### Watch the below video for more information.
-Video link (step-by-step)
+Video [link](https://drive.google.com/file/d/1h1IG9cOIvIm_0AYsiLLREkJ7bMNT16f0/view?usp=sharing) (step-by-step)
 
 
