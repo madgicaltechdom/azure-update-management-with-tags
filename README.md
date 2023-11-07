@@ -158,7 +158,7 @@ This run succesfully and you will recieve the notifications email.
 
 
 
-## how to use Azure Update Manager to schedule updates on Virtual Machines 
+## How to use Azure Update Manager to schedule updates on Virtual Machines 
 * Log in to Azure: Access your Azure portal at portal.azure.com.
 * Navigate to Update Manager: In the Azure portal, search for "Update Manager" and click on it.
 * Create an Update Deployment: Click "Schedule update deployment" to create a new update schedule.
